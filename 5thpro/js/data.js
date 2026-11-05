@@ -1,0 +1,8 @@
+export const products = [
+  { id: "linen-throw", name: "Linen throw", category: "Textiles", price: 128, image: "https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=800&q=75", description: "A generous, breathable linen throw woven in small batches. Softens beautifully with time." },
+  { id: "stoneware-vase", name: "Stoneware vase", category: "Objects", price: 84, image: "https://images.unsplash.com/photo-1612196808214-b8e1d6145a8c?auto=format&fit=crop&w=800&q=75", description: "Hand-finished stoneware with a quiet, organic silhouette for flowers or simply for its own sake." },
+  { id: "oak-lamp", name: "Oak table lamp", category: "Lighting", price: 245, image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=800&q=75", description: "Warm oak and a linen shade make this a gentle source of light for late evenings." },
+  { id: "arch-chair", name: "Arch lounge chair", category: "Furniture", price: 680, image: "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=800&q=75", description: "A sculptural, supportive chair designed for slow mornings and long conversations." },
+  { id: "clay-candle", name: "Clay candle holder", category: "Objects", price: 42, image: "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=75", description: "A tactile little holder, shaped by hand and glazed in a warm mineral finish." },
+  { id: "wool-cushion", name: "Wool cushion", category: "Textiles", price: 96, image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=75", description: "Textured wool with a feather-soft insert. Made to bring comfort and character." }
+];
