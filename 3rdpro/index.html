@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Orbit is a focused task manager with persistent local task storage and smart filters." />
+    <meta name="theme-color" content="#f6f7fb" />
+    <title>Orbit — Task manager</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Orbit home"><span aria-hidden="true">◉</span> orbit</a>
+        <p class="header-date" id="today-label"></p>
+        <button class="clear-completed" type="button" data-action="clear-completed">Clear completed</button>
+      </div>
+    </header>
+
+    <main id="main-content" class="container">
+      <section class="intro" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span aria-hidden="true">✦</span> Your personal command center</p>
+          <h1 id="page-title">Make progress<br /><em>visible.</em></h1>
+          <p class="intro-copy">A little clarity goes a long way. Capture what matters, keep your focus, and move forward one task at a time.</p>
+        </div>
+        <div class="progress-card" aria-label="Task completion progress">
+          <div class="progress-heading"><span>YOUR PROGRESS</span><strong id="progress-percent">0%</strong></div>
+          <div class="progress-track"><span id="progress-bar"></span></div>
+          <p><strong id="progress-completed">0</strong> of <strong id="progress-total">0</strong> tasks complete</p>
+        </div>
+      </section>
+
+      <section class="task-panel" aria-labelledby="tasks-title">
+        <div class="task-toolbar">
+          <div>
+            <p class="eyebrow">Today</p>
+            <h2 id="tasks-title">Your tasks <span id="task-count" aria-live="polite">0</span></h2>
+          </div>
+          <div class="filter-group" role="group" aria-label="Filter tasks">
+            <button type="button" class="filter-button is-active" data-filter="all" aria-pressed="true">All</button>
+            <button type="button" class="filter-button" data-filter="active" aria-pressed="false">Active</button>
+            <button type="button" class="filter-button" data-filter="completed" aria-pressed="false">Completed</button>
+          </div>
+        </div>
+
+        <form id="task-form" class="task-form">
+          <label class="sr-only" for="task-input">New task</label>
+          <input id="task-input" name="task" type="text" placeholder="What needs to be done?" maxlength="140" autocomplete="off" required />
+          <button type="submit" class="add-button"><span aria-hidden="true">+</span> Add task</button>
+        </form>
+
+        <div id="task-list" class="task-list" role="list" aria-live="polite" aria-label="Task list"></div>
+        <div id="empty-state" class="empty-state" hidden>
+          <span class="empty-icon" aria-hidden="true">✦</span>
+          <h3 id="empty-title">Nothing here yet</h3>
+          <p id="empty-copy">Add your first task above and start making progress.</p>
+        </div>
+        <div class="task-footer"><span id="remaining-count">0 tasks left</span><span>Saved automatically</span></div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container"><span>ORBIT</span><p>Your focus, in motion. <span aria-hidden="true">✦</span></p></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
