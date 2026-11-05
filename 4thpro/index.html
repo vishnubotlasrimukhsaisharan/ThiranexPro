@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Skyline is a live weather dashboard with current conditions and a five-day forecast for any city." />
+    <meta name="theme-color" content="#101a35" />
+    <title>Skyline — Live weather dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#" aria-label="Skyline home"><span aria-hidden="true">◒</span> SKYLINE</a>
+        <p class="data-source">Live data <span class="live-dot" aria-hidden="true"></span> Open-Meteo</p>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section class="search-section" aria-labelledby="page-title">
+        <div class="container search-layout">
+          <div>
+            <p class="eyebrow"><span aria-hidden="true">✦</span> Weather, wherever you are</p>
+            <h1 id="page-title">Look up<br /><em>your sky.</em></h1>
+            <p class="intro">Get a clear view of the conditions now and what is coming next.</p>
+          </div>
+          <form id="search-form" class="search-form" role="search">
+            <label for="city-input">Search for a city</label>
+            <div class="search-control">
+              <span aria-hidden="true">⌕</span>
+              <input id="city-input" name="city" type="search" placeholder="Try London, Tokyo..." autocomplete="address-level2" required />
+              <button type="submit">Search <span aria-hidden="true">↗</span></button>
+            </div>
+            <p id="search-status" class="status-message" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+
+      <section class="dashboard-section" aria-labelledby="weather-heading">
+        <div class="container">
+          <div id="loading-state" class="state-card" hidden role="status" aria-live="polite">
+            <span class="spinner" aria-hidden="true"></span><span>Reading the sky...</span>
+          </div>
+          <div id="error-state" class="state-card error-state" hidden role="alert">
+            <span aria-hidden="true">!</span><div><strong>We couldn't find that city.</strong><p id="error-message">Check the spelling and try again.</p></div>
+          </div>
+          <div id="weather-dashboard" hidden>
+            <div class="location-heading">
+              <div><p class="eyebrow"><span aria-hidden="true">✦</span> Current conditions</p><h2 id="weather-heading"><span id="city-name">—</span>, <small id="country-name">—</small></h2></div>
+              <p class="updated-label">Updated <time id="updated-time">—</time></p>
+            </div>
+            <div class="weather-grid">
+              <article class="current-card">
+                <div class="current-top"><div><p id="current-date">—</p><h3 id="weather-description">—</h3></div><div id="weather-icon" class="weather-icon" aria-hidden="true">☀</div></div>
+                <div class="temperature"><strong id="temperature">—</strong><span>°C</span></div>
+                <p class="feels-like">Feels like <strong id="feels-like">—</strong>°</p>
+                <div class="sun-row"><span><b aria-hidden="true">↗</b> Sunrise <strong id="sunrise">—</strong></span><span><b aria-hidden="true">↘</b> Sunset <strong id="sunset">—</strong></span></div>
+              </article>
+              <div class="metrics-grid">
+                <article class="metric-card"><span class="metric-icon blue" aria-hidden="true">◌</span><p>Humidity</p><strong><span id="humidity">—</span><small>%</small></strong><span class="metric-note">Relative humidity</span></article>
+                <article class="metric-card"><span class="metric-icon purple" aria-hidden="true">≋</span><p>Wind speed</p><strong><span id="wind-speed">—</span><small> km/h</small></strong><span class="metric-note" id="wind-direction">—</span></article>
+                <article class="metric-card"><span class="metric-icon orange" aria-hidden="true">◉</span><p>Precipitation</p><strong><span id="precipitation">—</span><small> mm</small></strong><span class="metric-note">Last hour</span></article>
+                <article class="metric-card"><span class="metric-icon yellow" aria-hidden="true">⌁</span><p>UV index</p><strong><span id="uv-index">—</span></strong><span class="metric-note" id="uv-note">—</span></article>
+              </div>
+            </div>
+            <div class="forecast-heading"><h3>5-day outlook</h3><span>Daily high / low</span></div>
+            <div id="forecast-list" class="forecast-list" role="list" aria-label="Five day weather forecast"></div>
+          </div>
+          <div id="welcome-state" class="welcome-state"><span aria-hidden="true">☁</span><h2>Find your forecast</h2><p>Search for a city to see live weather conditions.</p></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container"><span>SKYLINE</span><p>Live weather powered by <a href="https://open-meteo.com/" target="_blank" rel="noreferrer">Open-Meteo</a>.</p></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>
